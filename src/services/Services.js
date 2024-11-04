@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable indent */
-const dataSource = require('../models');
+const dataSource = require('../database/models');
 
 class Services {
     constructor(nomeDoModel){
