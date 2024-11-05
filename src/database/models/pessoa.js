@@ -15,6 +15,10 @@ module.exports = (sequelize, DataTypes) => {
         scope: { status: 'matriculado' },
         as: 'aulasMatriculadas'
       });
+      Pessoa.hasMany(models.Matricula, {//escopo de associação
+        foreignKey: 'estudante_id',
+        as: 'todasAsMatriculas'
+      });
     }
   }
   Pessoa.init({
@@ -56,7 +60,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     scopes: {
-      todosOsRegistros: {
+      todosOsRegistros: {//escopo de modelo
         where: {}
       }
     }
