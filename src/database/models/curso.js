@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   class Curso extends Model {
     static associate(models) {
       Curso.belongsTo(models.Categoria, {//belongsto é informado na ponta n das ligações entre tabelas
-        foreignKey: 'caterogia_id'
+        foreignKey: 'categoria_id'
       });
       Curso.belongsTo(models.Pessoa, {
         foreignKey: 'docente_id'
